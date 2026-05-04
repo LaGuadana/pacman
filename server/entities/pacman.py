@@ -10,7 +10,7 @@ class Pacman:
 
 	def move(self):
 		self.timer += 1
-		if self.timer < 1:
+		if self.timer < 7:
 			return
 		self.timer = 0
 		if self.next_direction is not None:
