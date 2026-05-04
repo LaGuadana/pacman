@@ -42,7 +42,7 @@ def main():
 					print("Pacman wins!")
 					pygame.quit()
 					sys.exit()
-		except:
+		except (BlockingIOError, OSError)::
 			pass
 
 		renderer.draw(screen, maze, pacman, ghosts, active)
