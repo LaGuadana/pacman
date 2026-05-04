@@ -29,9 +29,9 @@ class Pacman:
 			self.col = new_col
 			self.row = new_row
 
-			if new_col == 26 and new_row == 16:
+			if new_col == 26 and new_row == 13:
 				self.col = 1
-			elif new_col == 1 and new_row == 16:
+			elif new_col == 1 and new_row == 13:
 				self.col = 27
 			if MAZE[self.row][self.col] == '.':
 				row_string = MAZE[self.row]
