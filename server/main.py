@@ -56,8 +56,10 @@ def main():
 
 		try:
 			conn.sendall(state.encode())
-		except:
-			pass
+		except (BrokenPipeError, ConnectionResetError):
+		    print("Client disconnected!")
+		    pygame.quit()
+		    sys.exit()
 
 		if lives <= 0:
 			print("Pacman Loses!")
