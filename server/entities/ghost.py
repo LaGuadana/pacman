@@ -37,9 +37,9 @@ class Ghost:
 		if MAZE[new_row][new_col] != 'W':
 			self.col = new_col
 			self.row = new_row
-			if new_col == 27 and new_row == 15:
+			if new_col == 27 and new_row == 13:
 				self.col = 1
-			elif new_col == 1 and new_row == 15:
+			elif new_col == 1 and new_row == 13:
 				self.col = 27
 		else:
 			self.direction = None
