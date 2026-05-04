@@ -38,7 +38,11 @@ def start_server(port=9876):
 	print("Waiting for client to connect...")
 	server = socket.socket()
 	server.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
-	server.bind(("", port))
+	try:
+		server.bind(("", port))
+	except OSError:
+		print(f"ERROR: Port {port} already in use!")
+        sys.exit(1)
 	server.listen(1)
 	conn, addr = server.accept()
 	print(f"Client connected: {addr}")
