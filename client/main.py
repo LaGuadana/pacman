@@ -6,6 +6,11 @@ def main():
 	pygame.init()
 	screen = pygame.display.set_mode((COLS * TILE, ROWS * TILE))
 	clock  = pygame.time.Clock()
+	
+	if len(sys.argv) < 2:
+		print("Usage: python -m client.main <server_ip>")
+        sys.exit(1)
+	
 	conn = network.connect(sys.argv[1])
 
 	maze   = []
@@ -42,8 +47,12 @@ def main():
 					print("Pacman wins!")
 					pygame.quit()
 					sys.exit()
-		except (BlockingIOError, OSError)::
+		except (BlockingIOError, OSError):
 			pass
+		except (ConnectionResetError, BrokenPipeError):
+		    print("Server disconnected!")
+		    pygame.quit()
+		    sys.exit()	
 
 		renderer.draw(screen, maze, pacman, ghosts, active)
 		pygame.display.flip()
