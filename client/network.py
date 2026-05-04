@@ -2,10 +2,15 @@ import socket
 
 def connect(host, port=9876):
 	conn = socket.socket()
-	conn.connect((host, port))
-	conn.setblocking(False)
-	print("Connected!")
-	return conn
+	try:
+		conn.connect((host, port))
+		conn.setblocking(False)
+		print("Connected!")
+		return conn
+    except (ConnectionRefusedError, socket.timeout):
+        print(f"ERROR: Can't connect to {host}:{port}")
+        print("Make sure the server is running first!")
+        sys.exit(1) 
 
 def parse_state(line):
 	parts  = line.split(";")
