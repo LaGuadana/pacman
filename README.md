@@ -60,7 +60,3 @@ pacman_game/
 ```
 
 The code is split into modules but it's still pretty much the same game logic, just organized better. Check the `server/` and `client/` folders if you want to see how it's structured.
-
-## Note
-
-There's a bug in the original code where the tunnel wraparound checks row 16 but that row is all walls, so the wrap never actually triggers. I left it as-is since you wrote it that way, but if you want the tunnels to work you should change row 16 to row 14 in both `server/entities/pacman.py` and `server/entities/ghost.py`.
