@@ -42,7 +42,7 @@ def start_server(port=9876):
 		server.bind(("", port))
 	except OSError:
 		print(f"ERROR: Port {port} already in use!")
-        sys.exit(1)
+		sys.exit(1)
 	server.listen(1)
 	conn, addr = server.accept()
 	print(f"Client connected: {addr}")
