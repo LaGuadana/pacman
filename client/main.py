@@ -9,7 +9,7 @@ def main():
 	
 	if len(sys.argv) < 2:
 		print("Usage: python -m client.main <server_ip>")
-        sys.exit(1)
+		sys.exit(1)
 	
 	conn = network.connect(sys.argv[1])
 
