@@ -53,7 +53,7 @@ Use `127.0.0.1` if both are running on the same machine. Otherwise put in your f
 
 ## Controls
 
-Pacman (server side) uses the arrow keys. Eat all the dots before the ghosts catch you. You start with 10 lives, and the game ends when you run out or clear the maze.
+Pacman (server side) uses the arrow keys. Eat all the dots before the ghosts catch you. You start with 3 lives, and the game ends when you run out or clear the maze.
 
 Ghosts (client side), press 1, 2, 3, or 4 to pick which ghost you want to control, then steer it with the arrow keys. The ghost you're currently driving gets a white outline so you can keep track of it. Switching to a different ghost releases the previous one, and it goes back to wandering on its own.
 
