@@ -18,7 +18,7 @@ def main():
 	]
 
 	conn = network.start_server()
-	lives = 10
+	lives = 3
 
 	while True:
 		for event in pygame.event.get():
