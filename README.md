@@ -8,7 +8,7 @@ You can install it as a package or just run it straight from the folder.
 
 ### Option 1, install as a package
 
-From inside `pacman_game/`:
+From inside `pacman-main/`:
 
 ```bash
 pip install .
